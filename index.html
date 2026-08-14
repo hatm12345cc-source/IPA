@@ -1,248 +1,251 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRX | الموقع الرسمي</title>
-    <style>
-        :root {
-            --bg: #050507;
-            --purple: #8e2de2;
-            --card: rgba(15, 15, 19, 0.95);
-            --accent: #00e5ff;
-            --star-color: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0; padding: 0;
-            text-align: center;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* تأثير النجوم اللامعة في الخلفية */
-        #star-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #050507 100%);
-        }
-        .star {
-            position: absolute;
-            background: var(--star-color);
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: twinkle var(--duration) infinite;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.4); box-shadow: 0 0 10px white; }
-        }
-
-        /* القائمة الجانبية */
-        .sidebar {
-            height: 100%; width: 0; position: fixed; z-index: 2000;
-            top: 0; right: 0; background-color: #050507;
-            overflow-x: hidden; transition: 0.5s; padding-top: 60px;
-            border-left: 2px solid var(--purple);
-        }
-        .sidebar a {
-            padding: 15px 25px; text-decoration: none; font-size: 18px;
-            color: white; display: block; transition: 0.3s; text-align: right;
-        }
-        .sidebar a:hover { color: var(--accent); background: rgba(142, 45, 226, 0.1); }
-        .sidebar .closebtn { position: absolute; top: 10px; left: 20px; font-size: 36px; }
-
-        .dancing { animation: dance 3s ease-in-out infinite; }
-        @keyframes dance {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-10px) rotate(1deg); }
-        }
-
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 5%; background: rgba(0,0,0,0.85);
-            border-bottom: 2px solid var(--purple);
-            position: sticky; top: 0; z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .menu-btn { width: 50px; height: 50px; cursor: pointer; border-radius: 50%; border: 2px solid var(--purple); object-fit: cover; }
-        .logo { font-size: 28px; font-weight: bold; cursor: pointer; }
-        .logo span { color: var(--purple); text-shadow: 0 0 15px var(--purple); }
-
-        .container { max-width: 600px; margin: 20px auto; padding: 15px; position: relative; z-index: 1; }
-
-        .page { display: none; }
-        .active { display: block; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .main-card {
-            background: var(--card); border-radius: 20px; padding: 25px;
-            margin-bottom: 20px; border: 1px solid #333; cursor: pointer;
-            transition: 0.3s; text-decoration: none; color: white;
-            display: block;
-        }
-        .main-card:hover { border-color: var(--accent); transform: scale(1.02); }
-
-        .hero-btn {
-            background: #5865F2; display: block; padding: 18px;
-            border-radius: 15px; color: white; text-decoration: none;
-            font-weight: bold; font-size: 18px; margin-bottom: 15px;
-        }
-
-        .title-no-section {
-            color: var(--accent); font-size: 26px; margin: 30px 0;
-            font-weight: bold; text-shadow: 0 0 10px var(--purple);
-        }
-
-        .card {
-            background: var(--card); border-radius: 20px; padding: 18px;
-            border: 1px solid #333; margin-bottom: 25px; text-align: right;
-        }
-        .card img { width: 100%; border-radius: 15px; margin-bottom: 12px; }
-
-        /* أزرار النجوم السوداء */
-        .btn-install {
-            display: block; padding: 16px; border-radius: 12px;
-            background: #000000;
-            color: white; text-decoration: none; font-weight: bold;
-            margin-top: 10px; text-align: center; font-size: 18px;
-            border: 1px solid #444;
-            transition: 0.3s;
-            position: relative;
-        }
-        .btn-install:hover {
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-            border-color: #ffffff;
-        }
-        .btn-install::before { content: '★'; margin-left: 10px; opacity: 0.5; }
-        .btn-install::after { content: '★'; margin-right: 10px; opacity: 0.5; }
-
-        footer { padding: 40px; color: #555; font-size: 13px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>صيد IP معلومات</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Fira+Code:wght@400;600&display=swap');
+body{
+  background:linear-gradient(160deg,#031003,#071c07 40%,#021302);
+  min-height:100vh;
+  font-family:'Cairo',sans-serif;
+  color:#b8ffb8;
+  display:flex;
+  justify-content:center;
+  padding:30px 15px;
+  position:relative;
+  overflow-x:hidden
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,255,0,0.02) 2px 4px);
+  z-index:0
+}
+.wrap{position:relative;z-index:1;width:100%;max-width:960px}
+.hd{text-align:center;margin-bottom:25px}
+.hd h1{font-size:30px;font-weight:900;color:#3aff3a;text-shadow:0 0 15px #3aff3a88,0 0 40px #00aa0055;font-family:'Fira Code',monospace}
+.hd p{color:#4a7a4a;font-size:14px;margin-top:6px}
+.hd .tag{color:#0a0a0a;background:#3aff3a;padding:2px 14px;border-radius:20px;font-weight:700;display:inline-block;margin-top:10px;font-size:13px}
+.panel{
+  background:rgba(4,20,4,0.85);
+  border:1px solid #1d5a1d;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:16px;
+  box-shadow:0 0 25px #00ff0010,inset 0 0 40px #00ff0005
+}
+.panel h2{
+  font-size:16px;color:#3aff3a;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Fira Code',monospace
+}
+.panel h2::before{content:'▸';color:#2acc2a}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.inp{
+  flex:1;min-width:220px;
+  background:#031003;border:1px solid #1d5a1d;border-radius:10px;
+  color:#b8ffb8;font-family:'Fira Code',monospace;font-size:16px;
+  padding:12px 16px;direction:ltr;text-align:left;outline:none
+}
+.inp:focus{border-color:#3aff3a;box-shadow:0 0 12px #3aff3a33}
+.btn{
+  background:#0d3d0d;border:1px solid #3aff3a66;color:#7dff7d;
+  font-family:'Cairo',sans-serif;font-weight:700;font-size:15px;
+  padding:12px 24px;border-radius:10px;cursor:pointer;transition:all .2s
+}
+.btn:hover{background:#145a14;box-shadow:0 0 15px #3aff3a33}
+.btn:disabled{opacity:.4;cursor:wait}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.item{background:#021302;border:1px solid #134a13;border-radius:10px;padding:11px 14px}
+.item .lbl{font-size:11px;color:#4a7a4a;font-family:'Fira Code',monospace}
+.item .val{font-size:14px;color:#a8ffa8;font-weight:700;margin-top:4px;direction:ltr;text-align:left;word-break:break-all;font-family:'Fira Code',monospace}
+.item .val.ar{direction:rtl;text-align:right;font-family:'Cairo',sans-serif}
+.item .val.no{color:#5a8a5a}
+.map-box{width:100%;height:340px;border:1px solid #1d5a1d;border-radius:12px;overflow:hidden;background:#021302}
+.map-box iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(0.92) hue-rotate(90deg)}
+.map-ph{width:100%;height:340px;display:flex;align-items:center;justify-content:center;color:#4a7a4a;font-family:'Fira Code',monospace;font-size:14px}
+.hidden{display:none}
+.loading{display:flex;align-items:center;gap:10px;color:#3aff3a;font-family:'Fira Code',monospace;font-size:14px;margin-top:14px}
+.spin{width:16px;height:16px;border:2px solid #1d5a1d;border-top-color:#3aff3a;border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.err{color:#ff6b6b;font-family:'Fira Code',monospace;font-size:14px}
+.foot{text-align:center;color:#2a5a2a;font-size:11px;margin-top:10px;font-family:'Fira Code',monospace}
+@media(max-width:600px){.hd h1{font-size:22px}.panel{padding:14px}.item .val{font-size:12px}}
+</style>
 </head>
 <body>
+<div class="wrap">
 
-<div id="star-container"></div>
+  <div class="hd">
+    <h1>⚡ TRX IP ANALYZER ⚡</h1>
+    <p>تحليل كامل — IP / ASN / شركة الاتصال / الموقع الجغرافي / الخريطة</p>
+    <span class="tag">SYSTEM ONLINE v3.0 — بيانات حقيقية</span>
+  </div>
 
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#" onclick="showPage('home'); closeNav()">الصفحة الرئيسية</a>
-    <a href="#" onclick="showPage('hacks-ios'); closeNav()">هاك ايفون 🍎</a>
-    <a href="#" onclick="showPage('hacks-android'); closeNav()">هاك اندرويد 🤖</a>
-    <a href="#" onclick="showPage('hacks-pc'); closeNav()">هاك بي سي 💻</a>
+  <div class="panel">
+    <h2>تحليل الـ IP</h2>
+    <div class="row">
+      <input class="inp" id="ipInp" placeholder="اكتب IP أو اتركه فاضي لتحليل IP جهازك...">
+      <button class="btn" id="goBtn">🔍 تحليل</button>
+    </div>
+    <div class="loading hidden" id="loadTxt"><div class="spin"></div><span>جاري سحب البيانات من مزود التحليل...</span></div>
+    <div class="err hidden" id="errBox"></div>
+  </div>
+
+  <div class="panel hidden" id="pIp"><h2>📊 معلومات كاملة عن الـ IP</h2><div class="grid" id="gIp"></div></div>
+  <div class="panel hidden" id="pCo"><h2>🏢 شركة الاتصال</h2><div class="grid" id="gCo"></div></div>
+  <div class="panel hidden" id="pAb"><h2>📬 جهة الإبلاغ عن إساءة الاستخدام</h2><div class="grid" id="gAb"></div></div>
+  <div class="panel hidden" id="pAs"><h2>📡 معلومات ASN</h2><div class="grid" id="gAs"></div></div>
+  <div class="panel hidden" id="pGeo"><h2>📍 الموقع الجغرافي</h2><div class="grid" id="gGeo"></div></div>
+  <div class="panel hidden" id="pMap"><h2>🗺️ عرض على الخريطة</h2><div class="map-box" id="mapBox"></div></div>
+
+  <div class="foot">IP</div>
 </div>
-
-<header>
-    <img src="https://raw.githubusercontent.com/hatm12345cc-source/TRX/refs/heads/main/IMG_1996.png" class="menu-btn dancing" onclick="openNav()">
-    <div class="logo" onclick="showPage('home')">T<span>RX</span></div>
-</header>
-
-<div class="container">
-    
-    <div id="home" class="page active">
-        <h1 class="title-no-section">مرحباً بكم في موقع TRX أبوعتب</h1>
-        <img src="https://raw.githubusercontent.com/hatm12345cc-source/TRX/refs/heads/main/IMG_1996.png" class="dancing" style="width:130px; border-radius:50%; margin-bottom:20px; border: 3px solid var(--purple); box-shadow: 0 0 20px var(--purple);">
-        
-        <div class="main-card" onclick="showPage('hacks-ios')">
-            <h3>تطبيقات iOS 🍎</h3>
-            <p>(هاك روبلوكس،☠️ والمزيد)</p>
-        </div>
-
-        <div class="main-card" onclick="showPage('hacks-android')">
-            <h3>تطبيقات Android 🤖</h3>
-            <p>(أقوى هاكات الأندرويد و RC7)</p>
-        </div>
-
-        <div class="main-card" onclick="showPage('hacks-pc')">
-            <h3>تطبيقات PC 💻</h3>
-            <p>(هاك روبلوكس و RC7 للكمبيوتر)</p>
-        </div>
-
-        <a href="https://discord.gg/haX59nFsM" class="hero-btn">ديسكورد TRX 💬</a>
-    </div>
-
-    <div id="hacks-android" class="page">
-        <h2 class="title-no-section">(هاك الأندرويد 🤖)</h2>
-        
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/TRXZN/refs/heads/main/13FACF86-2936-4640-855C-58CC03C50AD8.png" class="dancing">
-            <h3>RC7 Executor (Android)</h3>
-            <a href="https://www.mediafire.com/file/5bz4tspokgmsnxa/RC7_WINDOWS_EXECUTOR.zip/file" class="btn-install">تحميل RC7 للأندرويد</a>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1929.png" class="dancing">
-            <h3>Delta Android</h3>
-            <a href="https://www.mediafire.com/file/ti5geyfey7thof9/Delta-2.707.734.apk/file" class="btn-install">Install Delta</a>
-        </div>
-        
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1935.jpeg" class="dancing">
-            <h3>SkibX Android</h3>
-            <a href="https://www.mediafire.com/file/khh1d18x0sbdfc6/SkibX-2.707.734.apk/file" class="btn-install">Install SkibX</a>
-        </div>
-    </div>
-
-    <div id="hacks-pc" class="page">
-        <h2 class="title-no-section">(هاك الكمبيوتر 💻)</h2>
-        
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/TRXZN/refs/heads/main/13FACF86-2936-4640-855C-58CC03C50AD8.png" class="dancing">
-            <h3>RC7 Executor (PC)</h3>
-            <a href="https://www.mediafire.com/file/h86k9egteysr1pc/RC7_WINDOWS_EXECUTOR.zip/file" class="btn-install">تحميل RC7 للكمبيوتر</a>
-        </div>
-
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/SKINA/refs/heads/main/IMG_1973.jpeg" class="dancing">
-            <h3>Xeno PC</h3>
-            <a href="https://www.mediafire.com/file/u767iu4khrmwjj3/Xeno-v1.3.20.zip/file" class="btn-install">Install Xeno</a>
-        </div>
-    </div>
-
-    <div id="hacks-ios" class="page">
-        <h2 class="title-no-section">(هاك الآيفون 🍎)</h2>
-        <div class="card">
-            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1929.png" class="dancing">
-            <h3>Delta iOS</h3>
-            <a href="itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist" class="btn-install">Install Delta (OTA)</a>
-            <a href="https://www.mediafire.com/file/4e71c3v00jez03p/Delta+VNG+V2.705+iOS+.ipa/file" class="btn-install">Install Delta VN (ipa)</a>
-        </div>
-    </div>
-
-</div>
-
-<footer>TRX 511 | جميع الحقوق محفوظة لأبوعتب © 2026</footer>
 
 <script>
-    const container = document.getElementById('star-container');
-    const starCount = 130;
+var goBtn=document.getElementById('goBtn');
+var ipInp=document.getElementById('ipInp');
+var loadTxt=document.getElementById('loadTxt');
+var errBox=document.getElementById('errBox');
+var gIp=document.getElementById('gIp'),gCo=document.getElementById('gCo');
+var gAb=document.getElementById('gAb'),gAs=document.getElementById('gAs');
+var gGeo=document.getElementById('gGeo'),mapBox=document.getElementById('mapBox');
+var pIp=document.getElementById('pIp'),pCo=document.getElementById('pCo');
+var pAb=document.getElementById('pAb'),pAs=document.getElementById('pAs');
+var pGeo=document.getElementById('pGeo'),pMap=document.getElementById('pMap');
 
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 3 + 1 + 'px';
-        star.style.width = size;
-        star.style.height = size;
-        star.style.top = Math.random() * 100 + '%';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
-        container.appendChild(star);
+function esc(s){
+  if(s===null||s===undefined)return '—';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function item(lbl,val,ar){
+  return '<div class="item"><div class="lbl">'+esc(lbl)+'</div><div class="val'+(ar?' ar':'')+'">'+esc(val)+'</div></div>';
+}
+function yn(v){
+  return v?'نعم':'لا';
+}
+function loading(on){
+  loadTxt.classList.toggle('hidden',!on);
+  errBox.classList.add('hidden');
+  goBtn.disabled=on;
+}
+function fail(msg){
+  errBox.textContent='❌ '+msg;
+  errBox.classList.remove('hidden');
+}
+function hideAll(){
+  pIp.classList.add('hidden');pCo.classList.add('hidden');pAb.classList.add('hidden');
+  pAs.classList.add('hidden');pGeo.classList.add('hidden');pMap.classList.add('hidden');
+}
+
+async function getJson(url){
+  var r=await fetch(url);
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return r.json();
+}
+
+async function analyze(ip){
+  loading(true);
+  hideAll();
+  try{
+    var who=await getJson('https://ipwho.is/'+(ip?encodeURIComponent(ip):''));
+    if(!who.success)throw new Error(who.message||'IP غير صالح');
+
+    var info=null;
+    try{info=await getJson('https://ipinfo.io/'+(ip?encodeURIComponent(ip):'')+'/json');}catch(e){info=null;}
+
+    var sec=who.security||{};
+    var con=who.connection||{};
+    var tz=who.timezone||{};
+    var cur=who.currency||{};
+    var priv=info&&info.privacy?info.privacy:{};
+    var comp=info&&info.company?info.company:{};
+    var abu=info&&info.abuse?info.abuse:{};
+    var asn=info&&info.asn?info.asn:{};
+
+    gIp.innerHTML=
+      item('عنوان IP',who.ip||'—')+
+      item('نوع العنوان',who.type||'—')+
+      item('Bogon',info&&info.bogon?'نعم':'لا')+
+      item('VPN',yn(sec.vpn||priv.vpn))+
+      item('Proxy',yn(sec.proxy||priv.proxy))+
+      item('TOR',yn(sec.tor||priv.tor))+
+      item('Datacenter / Hosting',yn(sec.hosting||priv.hosting))+
+      item('Anonymous',yn(sec.anonymous))+
+      item('جهاز موبايل','—')+
+      item('ساتلايت','—');
+    pIp.classList.remove('hidden');
+
+    gCo.innerHTML=
+      item('اسم الشركة',con.org||comp.name||'—',true)+
+      item('مزود الخدمة ISP',con.isp||'—',true)+
+      item('الدومين',con.domain||comp.domain||'—')+
+      item('النوع',comp.type||'—')+
+      item('الشبكة',asn.route||abu.network||'—');
+    pCo.classList.remove('hidden');
+
+    gAb.innerHTML=
+      item('الاسم',abu.name||'—',true)+
+      item('البريد',abu.email||'—')+
+      item('العنوان',abu.address||'—',true)+
+      item('الهاتف',abu.phone||'—')+
+      item('الشبكة',abu.network||'—')+
+      item('الدولة',abu.country||'—');
+    pAb.classList.remove('hidden');
+
+    gAs.innerHTML=
+      item('رقم ASN',con.asn||(asn.asn?asn.asn.replace('AS',''):'—'))+
+      item('الوصف',asn.name||con.org||'—',true)+
+      item('الراوت',asn.route||'—')+
+      item('الدولة',asn.country||who.country_code||'—')+
+      item('الدومين',asn.domain||con.domain||'—')+
+      item('النوع',asn.type||comp.type||'—')+
+      item('بريد الإساءة',abu.email||'—')+
+      item('تاريخ الإنشاء','—')+
+      item('آخر تحديث','—')+
+      item('RIR','—');
+    pAs.classList.remove('hidden');
+
+    gGeo.innerHTML=
+      item('الدولة',(who.country||'—')+' '+(who.flag?who.flag.emoji:''),true)+
+      item('كود الدولة',who.country_code||'—')+
+      item('المدينة',who.city||'—',true)+
+      item('المنطقة',who.region||'—',true)+
+      item('القارة',who.continent||'—',true)+
+      item('رمز الاتصال',who.calling_code||'—')+
+      item('العملة',(cur.code||'—')+' '+(cur.name||''),true)+
+      item('المنطقة الزمنية',tz.id||'—')+
+      item('خط العرض',who.latitude||'—')+
+      item('خط الطول',who.longitude||'—')+
+      item('الوقت المحلي',tz.current_time||'—')+
+      item('عضو بالاتحاد الأوروبي',yn(who.is_eu));
+    pGeo.classList.remove('hidden');
+
+    if(who.latitude&&who.longitude){
+      mapBox.innerHTML='<iframe src="https://www.google.com/maps?q='+who.latitude+','+who.longitude+'&z=12&output=embed"></iframe>';
+    }else{
+      mapBox.innerHTML='<div class="map-ph">⚠ لا توجد إحداثيات لهذا الـ IP</div>';
     }
+    pMap.classList.remove('hidden');
 
-    function openNav() { document.getElementById("mySidebar").style.width = "260px"; }
-    function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+  }catch(e){
+    fail(e.message);
+  }finally{
+    loading(false);
+  }
+}
 
-    function showPage(pageId) {
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0,0);
-    }
+goBtn.addEventListener('click',function(){
+  var v=ipInp.value.trim();
+  analyze(v||'');
+});
+ipInp.addEventListener('keydown',function(e){
+  if(e.key==='Enter')goBtn.click();
+});
+
+analyze('');
 </script>
 </body>
 </html>
